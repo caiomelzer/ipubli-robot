@@ -1,0 +1,9 @@
+﻿{
+    "server":{
+        "environment":"production",
+        "port":4001,
+        "url":"http://localhost:4001"
+    }
+    
+}
+
