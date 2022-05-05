@@ -8,7 +8,7 @@ const axios = require("axios");
 var fs = require('fs');
 const { server } = require('./config');
 
-cron.schedule("* * * * * *", () => {
+cron.schedule("15 * * * * *", () => {
     const optionsUsername = {
         method: 'GET',
         url: server.url+'/api/v1/utils/instagram/',
@@ -17,7 +17,7 @@ cron.schedule("* * * * * *", () => {
       
       axios.request(optionsUsername).then(function (responseUsername) {
         console.log('Calling Instragram Profile', responseUsername.data.updatedAt)
-         var updatedAt = new Date(responseUsername.data.updatedAt);   
+        var updatedAt = new Date(responseUsername.data.updatedAt);   
             var today = new Date(Date.now());
             today = today.setDate(today.getDate() - 30);
             console.log(updatedAt , today)
