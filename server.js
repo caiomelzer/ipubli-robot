@@ -8,7 +8,7 @@ const axios = require("axios");
 var fs = require('fs');
 const { server } = require('./config');
 
-cron.schedule("5 * * * * *", () => {
+cron.schedule("*/5 * * * * *", () => {
     const optionsUsername = {
         method: 'GET',
         url: server.url+'/api/v1/utils/instagram/',
