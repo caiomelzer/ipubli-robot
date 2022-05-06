@@ -8,7 +8,7 @@ const axios = require("axios");
 var fs = require('fs');
 const { server } = require('./config');
 
-cron.schedule("15 * * * * *", () => {
+cron.schedule("5 * * * * *", () => {
     const optionsUsername = {
         method: 'GET',
         url: server.url+'/api/v1/utils/instagram/',
@@ -31,7 +31,7 @@ cron.schedule("15 * * * * *", () => {
                 axios.request(options).then(function (response) {
                     let optionsUpdateUser = {
                         method: 'PUT',
-                        url: server.url+'/api/v1/utils/instagram/'+response.data.username+'?id='+response.data.id,
+                        url: server.url+'/api/v1/utils/instagram/'+response.data.username,
                         headers: {}
                     };
                     axios.request(optionsUpdateUser).then(function (responseUsername) {
