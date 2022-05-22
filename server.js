@@ -23,7 +23,7 @@ cron.schedule("*/15 * * * * *", () => {
             var today = new Date(Date.now());
             today = today.setDate(today.getDate() - 30);
             console.log(updatedAt , today)
-            if(updatedAt < today){
+            if(updatedAt > today){
                 console.log('chamar')
                 let options = {
                     method: 'GET',
@@ -48,10 +48,6 @@ cron.schedule("*/15 * * * * *", () => {
             else{
                 console.log('No updates needed')
             }
-
-            
-            
-        
     }).catch(function (error) {
         console.log(error)
     });
