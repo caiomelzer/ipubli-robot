@@ -21,7 +21,7 @@ cron.schedule("*/15 * * * * *", () => {
         console.log('Calling Instragram Profile', responseUsername.data.updatedAt)
         var updatedAt = new Date(responseUsername.data.updatedAt);   
             var today = new Date(Date.now());
-            today = today.setDate(today.getDate() - 1);
+            today = today.setDate(today.getDate() - 30);
             console.log(updatedAt , today)
             if(updatedAt < today){
                 console.log('chamar')
